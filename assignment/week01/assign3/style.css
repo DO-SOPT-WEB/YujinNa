@@ -11,7 +11,7 @@ img{
 #title{
     background-color: palevioletred;
     color:white;
-    padding:0.5rem 2rem;
+    padding:1.5rem 3rem;
     font-size: 1.5rem;
 }
 
@@ -21,14 +21,13 @@ img{
     overflow-x: auto;
     overflow-y: hidden;
     background-color: lavenderblush;
-
     gap: 0.5rem;
-    padding: 1.5rem;
+    padding: 2rem 4rem;
 }
 
 #preview img{
-    width: 150px;
-    height: 200px;
+    width: 250px;
+    height: 350px;
 }
 
 .navbar{
@@ -43,12 +42,14 @@ img{
 
 .navbar ul{
     display: flex;
+    width: fit-content;
     padding: 1rem 0;
     list-style: none;
 }
 
 .navbar ul a{
     color:black;
+    margin: 0 1.5rem;
     text-decoration: none;
 }
 
@@ -57,16 +58,16 @@ img{
     color:palevioletred;
 }
 
-section header{
+section > header{
     background-color: pink;
     padding: 0.5rem 2rem;
-    margin: 1rem 0;
+    margin: 0 0 1rem;
     position: sticky;
-    top:0;
-    
+    top: 0;
+    z-index: 1;
 }
 
-#picture{
+#sec1{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -75,7 +76,89 @@ section header{
     gap:0.5rem;
 }
 
+#sec2{
+    display: grid;
+    padding: 3rem 10rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    position: relative;
+}
+
+#sec2 > img:nth-child(1){
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+#sec2 img{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+#sec3{
+    display: grid;
+    padding: 3rem 10rem;
+    position: relative;
+    gap: 0.3rem;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+        "first first first first second second second second"
+        "third third third third second second second second"
+        "fourth fourth fourth fourth fourth fourth fifth fifth"
+        "fourth fourth fourth fourth fourth fourth fifth fifth";
+    /* template area 이거 말고 그냥 grid 안에 grid 주는 구조로 할걸 .. 싶은 마음이 들지만 .. 
+        과제 4번도 다 한 후에 .. 시간이 된다면 .. 수정을 ..
+    */
+}
+
+#sec3 > img{
+    width: 100%;
+}
+
+#sec3 > img:nth-child(1){
+    grid-area: first;
+    aspect-ratio: 4/1;
+}
+
+#sec3 > img:nth-child(2){
+    grid-area: second;
+    aspect-ratio: 2/1;
+}
+
+#sec3 > img:nth-child(3){
+    grid-area: third;
+    aspect-ratio: 4/1;
+}
+
+#sec3 > img:nth-child(4){
+    grid-area: fourth;
+    aspect-ratio: 3/1;
+}
+
+#sec3 > img:nth-child(5){
+    grid-area: fifth;
+    aspect-ratio: 1/1;
+}
+
 #Belgium img, #Switzerland img{
     width: 250px;
     height: 250px;
+}
+
+footer{
+    background-color: lightgray;
+    padding: 2rem 10rem;
+    text-align: center;
+}
+
+#top{
+    position: fixed;
+    bottom:1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+}
+
+#top img{
+    width: 2.5rem;
 }
