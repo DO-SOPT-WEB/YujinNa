@@ -51,6 +51,7 @@ body > header{
 
 #detail{
     margin-top: 1rem;
+    margin-bottom: 5px;
     border-top: 3px solid lightgray;
     border-bottom: 2px solid lightgray;
 }
@@ -79,7 +80,6 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]+label{
-    /* display: none; */
     padding:3px 10px;
     border-radius: 10px;
     border: 3px solid lightskyblue;
@@ -88,4 +88,68 @@ input[type="checkbox"]+label{
 input[type="checkbox"]:checked + label{
     color: white;    
     background-color: lightskyblue;
+}
+
+#detaillist{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 400px;
+}
+
+#eachlist{
+    display: flex;
+    background-color: lightcyan;
+    margin: 5px 30px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+#eachlist #in{
+    color: blue;
+}
+
+#eachlist #out{
+    color: red;
+}
+
+#eachlist div:nth-child(1){
+    flex-basis: 15%;
+}
+
+#eachlist div:nth-child(2){
+    flex-basis: 60%;
+}
+
+#eachlist div:nth-child(3){
+    flex-basis: 25%;
+    text-align: right;
+}
+
+#xbtn{
+    position: absolute;
+    top:0px;
+    right: 8px;
+    font-weight: 500;
+}
+
+#bottom{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: ivory;
+}
+
+#bottom div{
+    background-color: lightsteelblue;
+    width: fit-content;
+    padding: 0px 30px 10px;
+    border-radius: 30px;
+    justify-content: center;
+    vertical-align: center;
+    margin: auto;
+    color: white;
+    font-size: 50px;
 }
