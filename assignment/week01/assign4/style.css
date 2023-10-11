@@ -1,0 +1,91 @@
+body {
+    box-sizing: border-box;
+    margin:auto;
+    font-weight: 600;
+}
+
+body > header{
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: lightcyan;
+    border-bottom: 3px solid lightgrey;
+    padding: 1rem 0;
+}
+
+#total{
+    background-color: lightcyan;
+    margin: 1rem 5rem;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#total strong{
+    font-size: 2rem;
+}
+
+#plusminus{
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 2rem;
+}
+
+#plusminus span{
+    background-color: white;
+    text-align: center;
+    border-radius: 100%;
+    padding: 0 5px;
+    margin:10px;
+}
+
+#plusminus div:nth-child(1){
+    color: blue;
+    margin-right: 20px;
+}
+
+#plusminus div:nth-child(2){
+    color: red;
+}
+
+#detail{
+    margin-top: 1rem;
+    border-top: 3px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
+
+#date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#date img{
+    width: 30px;
+    margin:0 5px;
+}
+
+#datebelow{
+    display: flex;
+    justify-content: space-between;
+    margin:0 20px;
+    padding:0 0 15px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]+label{
+    /* display: none; */
+    padding:3px 10px;
+    border-radius: 10px;
+    border: 3px solid lightskyblue;
+}
+
+input[type="checkbox"]:checked + label{
+    color: white;    
+    background-color: lightskyblue;
+}
