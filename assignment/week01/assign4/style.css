@@ -94,7 +94,7 @@ input[type="checkbox"]:checked + label{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    height: 70vh;
+    height: 40vh;
 }
 
 #eachlist{
@@ -121,12 +121,17 @@ input[type="checkbox"]:checked + label{
 
 #eachlist div:nth-child(2){
     flex-basis: 60%;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #eachlist div:nth-child(3){
     flex-basis: 25%;
     text-align: right;
 }
+
 
 #xbtn{
     position: absolute;
