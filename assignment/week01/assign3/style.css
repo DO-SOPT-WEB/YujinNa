@@ -24,11 +24,22 @@ img{
 #preview{
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
     background-color: lavenderblush;
     gap: 0.5rem;
     padding: 2rem 4rem;
+}
+
+#preview::-webkit-scrollbar{
+    width: 5px;
+    height: 7px;
+}
+
+#preview::-webkit-scrollbar-thumb {
+    /* 스크롤바 막대 */
+    background: pink; 
+    border-radius: 20px;
 }
 
 #preview img{
