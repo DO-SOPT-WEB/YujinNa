@@ -96,6 +96,9 @@ section > header{
 #sec1 img{
     width: 250px;
     height: 250px;
+    flex-basis: 250px;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 #sec2{
