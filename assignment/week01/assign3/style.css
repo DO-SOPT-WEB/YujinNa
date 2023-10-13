@@ -1,7 +1,12 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     box-sizing: border-box;
     margin:auto;
     font-weight: 600;
+    /* scroll-snap-type: y mandatory; */
 }
 
 img{
@@ -13,6 +18,7 @@ img{
     color:white;
     padding:1.5rem 3rem;
     font-size: 1.5rem;
+    scroll-snap-align: start;
 }
 
 #preview{
