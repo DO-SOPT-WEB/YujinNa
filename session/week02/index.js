@@ -23,3 +23,10 @@ const thirdFruit = document.querySelector("li:nth-child(3)");
 
 thirdFruit.classList.add("blue");
 console.log(thirdFruit.classList);
+
+const lengthButton = document.querySelector("button.count");
+function showLength(){
+    const allList=document.querySelectorAll("li");
+    alert(`과일 개수는 ${allList.length}입니다.`);
+}
+lengthButton.addEventListener("click", showLength);
