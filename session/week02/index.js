@@ -18,3 +18,8 @@ const redFruit= document.querySelectorAll(".red");
 redFruit.forEach((fruit)=>{
     fruit.remove(); // 화살표 방식의 콜백함수를 사용한 것
 })
+
+const thirdFruit = document.querySelector("li:nth-child(3)");
+
+thirdFruit.classList.add("blue");
+console.log(thirdFruit.classList);
