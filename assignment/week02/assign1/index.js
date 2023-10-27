@@ -14,6 +14,7 @@ sec1ImgList.forEach((img)=>{
     wrapper.append(spantitle);
     wrapper.append(spandesc);
     img.addEventListener('mouseover', showContent);
+    img.addEventListener('mouseout', removeContent);
     
 })
 
@@ -23,6 +24,14 @@ function showContent(event){
     title.style.visibility="visible";
     const desc=event.target.nextElementSibling.nextElementSibling;
     desc.style.visibility="visible";
+}
+
+function removeContent(event){    
+    console.log(event.target.nextElementSibling);
+    const title=event.target.nextElementSibling;
+    title.style.visibility="hidden";
+    const desc=event.target.nextElementSibling.nextElementSibling;
+    desc.style.visibility="hidden";
 }
 
 

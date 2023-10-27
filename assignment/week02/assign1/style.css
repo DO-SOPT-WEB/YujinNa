@@ -6,7 +6,6 @@ body {
     box-sizing: border-box;
     margin:auto;
     font-weight: 600;
-    /* scroll-snap-type: y mandatory; */
 }
 
 img{
