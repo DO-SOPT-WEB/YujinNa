@@ -1,0 +1,192 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    margin:auto;
+    font-weight: 600;
+    /* scroll-snap-type: y mandatory; */
+}
+
+img{
+    object-fit: cover;
+}
+
+#title{
+    background-color: palevioletred;
+    color:white;
+    padding:1.5rem 3rem;
+    font-size: 1.5rem;
+    scroll-snap-align: start;
+}
+
+#preview{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color: lavenderblush;
+    gap: 0.5rem;
+    padding: 2rem 4rem;
+}
+
+#preview::-webkit-scrollbar{
+    width: 5px;
+    height: 7px;
+}
+
+#preview::-webkit-scrollbar-thumb {
+    /* 스크롤바 막대 */
+    background: pink; 
+    border-radius: 20px;
+}
+
+#preview img{
+    width: 250px;
+    height: 350px;
+}
+
+.navbar{
+    text-align: center;
+    background-color: lavenderblush;
+    margin: 0.3rem 0;
+    border: 3px solid pink;
+    border-left: 0;
+    border-right: 0;
+    padding: 1rem;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.navbar ul a{
+    color:black;
+    margin: 0 1.5rem;
+    text-decoration: none;
+}
+
+.navbar ul a:hover{
+    text-decoration: underline;
+    color:palevioletred;
+}
+
+section > header{
+    background-color: pink;
+    padding: 0.5rem 2rem;
+    margin: 0 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#sec1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding:2rem 4rem;
+    gap:0.5rem;
+}
+
+#sec1 img{
+    width: 250px;
+    height: 250px;
+    flex-basis: 250px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#sec2{
+    display: flex;
+    padding: 3rem 10rem;
+    gap: 2%;
+    position: relative;
+}
+
+#sec2 > img, #sec2 > div{
+    width: 50%;
+    aspect-ratio: 1/1;
+
+}
+
+#sec2 > div{
+    display: flex;
+    gap: 4%;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#sec2 > div > img{
+    width: 48%;
+    aspect-ratio: 1/1;
+}
+
+#sec3{
+    display: grid;
+    padding: 3rem 10rem;
+    position: relative;
+    gap: 0.3rem;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+        "first first first first second second second second"
+        "third third third third second second second second"
+        "fourth fourth fourth fourth fourth fourth fifth fifth"
+        "fourth fourth fourth fourth fourth fourth fifth fifth";
+    /* template area 이거 말고 그냥 grid 안에 grid 주는 구조로 할걸 .. 싶은 마음이 들지만 .. 
+        과제 4번도 다 한 후에 .. 시간이 된다면 .. 수정을 ..
+    */
+}
+
+#sec3 > img{
+    width: 100%;
+}
+
+#sec3 > img:nth-child(1){
+    grid-area: first;
+    aspect-ratio: 4/1;
+}
+
+#sec3 > img:nth-child(2){
+    grid-area: second;
+    aspect-ratio: 2/1;
+}
+
+#sec3 > img:nth-child(3){
+    grid-area: third;
+    aspect-ratio: 4/1;
+}
+
+#sec3 > img:nth-child(4){
+    grid-area: fourth;
+    aspect-ratio: 3/1;
+}
+
+#sec3 > img:nth-child(5){
+    grid-area: fifth;
+    aspect-ratio: 1/1;
+}
+
+
+
+footer{
+    background-color: lightgray;
+    padding: 2rem 10rem;
+    text-align: center;
+}
+
+#top{
+    position: fixed;
+    bottom:1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+}
+
+#top img{
+    width: 2.5rem;
+}
