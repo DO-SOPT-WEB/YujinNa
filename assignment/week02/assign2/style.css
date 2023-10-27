@@ -32,7 +32,7 @@ body > header{
     margin: 10px 15px;
 }
 
-#plusminus span{
+#plusminus .sign{
     background-color: white;
     text-align: center;
     border-radius: 100%;
@@ -97,7 +97,7 @@ input[type="checkbox"]:checked + label{
     height: 40vh;
 }
 
-#eachlist{
+.eachlist{
     display: flex;
     background-color: lightcyan;
     margin: 5px 30px;
@@ -107,19 +107,19 @@ input[type="checkbox"]:checked + label{
     position: relative;
 }
 
-#eachlist #in{
+.eachlist .in{
     color: blue;
 }
 
-#eachlist #out{
+.eachlist .out{
     color: red;
 }
 
-#eachlist div:nth-child(1){
+.eachlist div:nth-child(1){
     flex-basis: 15%;
 }
 
-#eachlist div:nth-child(2){
+.eachlist div:nth-child(2){
     flex-basis: 60%;
     display: block;
     overflow: hidden;
@@ -127,13 +127,13 @@ input[type="checkbox"]:checked + label{
     text-overflow: ellipsis;
 }
 
-#eachlist div:nth-child(3){
+.eachlist div:nth-child(3){
     flex-basis: 25%;
     text-align: right;
 }
 
 
-#xbtn{
+.xbtn{
     position: absolute;
     top:0px;
     right: 8px;
