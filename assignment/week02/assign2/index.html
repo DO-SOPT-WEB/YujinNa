@@ -39,6 +39,47 @@
     <section id="bottom">
         <div>+</div>        
     </section>
+    <section id="modalWrap">
+        <div id="modalContent">
+            <div id="modalBody">
+                <div>내역 추가</div>
+                <section id="modal-in-out">
+                    <input checked type="radio" id="add-in" name="inout"/>
+                    <label for="add-in">수입</label>
+                    <input type="radio" id="add-out" name="inout"/>
+                    <label for="add-out">지출</label>
+                </section>
+                <section id="modal-category">
+                    <header>종류</header>
+                    <div id="add-category-in">
+                        <select id="category-in">
+                            <option value="과외" name="category-in">과외</option>
+                            <option value="용돈" name="category-in">용돈</option>
+                        </select>
+                    </div>
+                    <div id="add-category-out">
+                        <select id="category-out">
+                            <option value="식비" name="category-out">식비</option>
+                            <option value="쇼핑" name="category-out">쇼핑</option>
+                        </select>
+                    </div>
+                    
+                </section>
+                <section id="modal-amount">
+                    <header>금액</header>
+                    <input type="number" id="input-amount" />
+                </section>
+                <section id="modal-content">
+                    <header>내용</header>
+                    <input type="text" id="input-content"/>
+                </section>
+                <section id="modal-btn">
+                    <button type="button" class="modal-saveBtn">저장하기</button>
+                    <button type="button" class="modal-closeBtn">닫기</button>
+                </section>
+            </div>
+        </div>
+    </section>
     <script src="index.js"></script>
 </body>
 </html>

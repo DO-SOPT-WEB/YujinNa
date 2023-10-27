@@ -158,3 +158,38 @@ input[type="checkbox"]:checked + label{
     color: white;
     font-size: 50px;
 }
+
+#modalWrap {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0px;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#modalBody {
+    bottom: 0px;
+    position: relative;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    padding: 30px 30px;
+    border-radius: 5rem;
+    background-color: #fff;
+}
+
+#closeBtn {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#add-category-out{
+    display: none;
+}

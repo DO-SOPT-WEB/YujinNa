@@ -25,13 +25,46 @@ const income=document.querySelector("#income_tot");
 const outcome=document.querySelector("#outcome_tot");
 const inBtn=document.querySelector("#in");
 const outBtn=document.querySelector("#out");
+const addBtn=document.querySelector("#bottom div");
+const modal = document.getElementById('modalWrap');
+var radio = document.getElementsByName("inout");
+const c_in = document.getElementById('category-in');
+const c_out= document.getElementById('category-out');
+const m_input=document.querySelector('#input-amount');
+const m_content=document.querySelector('#input-content');
 
+const submitBtn=document.querySelector('.modal-saveBtn');
+const closeBtn = document.querySelector('.modal-closeBtn');
+let inputAmount=0;
+let inputContent="";
+let inputSign=1;
+let inputCategory="";
 
 makeHistoryList();
 calculateHistory();
 
 inBtn.addEventListener("click",infilter);
 outBtn.addEventListener("click",outfilter);
+addBtn.addEventListener("click",addList);
+submitBtn.addEventListener("click",submitList);
+
+c_in.addEventListener("change",function(event){
+    console.log(event.target.value);
+    inputCategory=event.target.value;
+})
+c_out.addEventListener("change",function(event){
+    inputCategory=event.target.value;
+    console.log(event.target.value);
+})
+m_input.addEventListener("change",function(event){
+    console.log(event.target.value);
+    inputAmount=event.target.value;
+})
+m_content.addEventListener("change",function(event){
+    console.log(event.target.value);
+    inputContent=event.target.value;
+})
+
 
 function infilter(){
     clickedIncome=(!clickedIncome);
@@ -108,4 +141,45 @@ function calculateHistory(){
     total.innerText=init_balance;
     income.innerText=income_total;
     outcome.innerText=outcome_total;
+}
+
+function addList(){
+    modal.style.display = 'block';
+}
+
+function submitList(){
+    history_list.push({
+        category:inputCategory,
+        detail:inputContent,
+        amount: inputAmount*inputSign
+    })
+    window.alert("저장되었습니다.");
+    detaillist.replaceChildren();
+    makeHistoryList();
+    calculateHistory();
+
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+for(var i=0 ; i < radio.length ; i++){
+    radio[i].addEventListener('click', function () {
+    if(this.id === "add-in"){
+        console.log("in");
+        inputSign=1;
+        inputCategory=c_in.options[c_in.selectedIndex].value;
+        document.getElementById('add-category-in').style.display="block";
+        document.getElementById('add-category-out').style.display="none";
+    }else{
+        console.log("out");
+        inputSign=-1;
+        inputCategory=c_out.options[c_out.selectedIndex].value;
+
+        document.getElementById('add-category-out').style.display="block";
+        document.getElementById('add-category-in').style.display="none";
+    }
+    console.log(inputCategory);
+})
 }
