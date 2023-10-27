@@ -1,4 +1,5 @@
 const sec1ImgList = document.querySelectorAll(".sec1wrap img");
+const topBtn = document.querySelector("#top img");
 
 sec1ImgList.forEach((img)=>{
     let title=img.getAttribute('img-title');
@@ -19,7 +20,6 @@ sec1ImgList.forEach((img)=>{
 })
 
 function showContent(event){    
-    console.log(event.target.nextElementSibling);
     const title=event.target.nextElementSibling;
     title.style.visibility="visible";
     const desc=event.target.nextElementSibling.nextElementSibling;
@@ -27,14 +27,13 @@ function showContent(event){
 }
 
 function removeContent(event){    
-    console.log(event.target.nextElementSibling);
     const title=event.target.nextElementSibling;
     title.style.visibility="hidden";
     const desc=event.target.nextElementSibling.nextElementSibling;
     desc.style.visibility="hidden";
 }
 
-
-
-
-
+window.addEventListener('scroll', () => {
+    let scrollDepth = ((window.scrollY + window.innerHeight)/document.body.scrollHeight)-0.2;
+    topBtn.style.opacity=scrollDepth;
+});
