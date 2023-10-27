@@ -19,45 +19,80 @@ let history_list=[
         detail:"수육국밥",
         amount:-10000
     }];
+let filteredList=history_list;
+let clickedIncome=true, clickedOutcome=true;
 
 const total=document.querySelector("#totalMoney");
-const detaillist=document.querySelector("#detaillist");
+let detaillist=document.querySelector("#detaillist");
 const income=document.querySelector("#income_tot");
 const outcome=document.querySelector("#outcome_tot");
+const inBtn=document.querySelector("#in");
+const outBtn=document.querySelector("#out");
 
-history_list.forEach((each)=>{
-    init_balance+=each.amount;
-    
-    const eachlist = document.createElement('div');
-    const category = document.createElement('div');
-    const detail = document.createElement('div');
-    const amount = document.createElement('div');
-    const xbtn = document.createElement('div');
-    
-    category.innerText=each.category;
-    detail.innerText=each.detail;
-    amount.innerText=each.amount;
-    xbtn.innerText='x';
-    
-    eachlist.appendChild(category);
-    eachlist.appendChild(detail);
-    eachlist.appendChild(amount);
-    eachlist.appendChild(xbtn);
 
-    eachlist.classList.add('eachlist');
-    detaillist.appendChild(eachlist);
-
-    if(each.amount<0){
-        amount.classList.add('out');
-        outcome_total+=each.amount;
-    }else{
-        amount.classList.add('in')
-        income_total+=each.amount;
-    }
-
-    xbtn.classList.add('xbtn');
-})
+makeHistoryList();
 
 total.innerText=init_balance;
 income.innerText=income_total;
 outcome.innerText=outcome_total;
+
+inBtn.addEventListener("click",infilter);
+outBtn.addEventListener("click",outfilter);
+
+function infilter(){
+    clickedIncome=(!clickedIncome);
+    doFilter()
+}
+
+function outfilter(){
+    clickedOutcome=(!clickedOutcome);
+    doFilter()
+}
+
+function doFilter(){
+    detaillist.replaceChildren();
+    if(clickedIncome && clickedOutcome)
+        filteredList=history_list;
+    else if(clickedIncome)
+        filteredList=history_list.filter((each)=>each.amount>0);
+    else if(clickedOutcome)
+        filteredList=history_list.filter((each)=>each.amount<0);
+    else
+        filteredList=[];    
+
+    makeHistoryList();
+}
+
+function makeHistoryList(){
+    filteredList.forEach((each)=>{
+        init_balance+=each.amount;
+        
+        const eachlist = document.createElement('div');
+        const category = document.createElement('div');
+        const detail = document.createElement('div');
+        const amount = document.createElement('div');
+        const xbtn = document.createElement('div');
+        
+        category.innerText=each.category;
+        detail.innerText=each.detail;
+        amount.innerText=each.amount;
+        xbtn.innerText='x';
+        
+        eachlist.appendChild(category);
+        eachlist.appendChild(detail);
+        eachlist.appendChild(amount);
+        eachlist.appendChild(xbtn);
+    
+        eachlist.classList.add('eachlist');
+        detaillist.appendChild(eachlist);
+    
+        if(each.amount<0){
+            amount.classList.add('out');
+            outcome_total+=each.amount;
+        }else{
+            amount.classList.add('in')
+            income_total+=each.amount;
+        }
+        xbtn.classList.add('xbtn');
+    })
+}
