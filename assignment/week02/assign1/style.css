@@ -84,7 +84,7 @@ section > header{
     z-index: 1;
 }
 
-#sec1{
+.sec1{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -93,12 +93,44 @@ section > header{
     gap:0.5rem;
 }
 
-#sec1 img{
+.sec1wrap{
+    position:relative;
+
+}
+.sec1 img{
     width: 250px;
     height: 250px;
     flex-basis: 250px;
     flex-grow: 1;
     flex-shrink: 1;
+    z-index: 1;
+}
+
+.sec1 img:hover{
+    filter:brightness(0.5);
+}
+
+.title, .content{
+    position: absolute;
+    color: white;
+    z-index: 2;
+    visibility: hidden;
+    
+}
+
+.title{
+    font-size: 1rem;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content{
+    font-size: 0.7rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
 }
 
 #sec2{
@@ -126,10 +158,10 @@ section > header{
     aspect-ratio: 1/1;
 }
 
-#sec1 > img:hover , #sec2 > img:hover {
+.sec1 div:hover , #sec2 img:hover {
     transform: translateY(-0.3rem);
     transition: all 0.2s linear;
-    filter:brightness(0.5);
+    
 }
 
 #sec3{
