@@ -129,6 +129,7 @@ section > header{
 #sec1 > img:hover , #sec2 > img:hover {
     transform: translateY(-0.3rem);
     transition: all 0.2s linear;
+    filter:brightness(0.5);
 }
 
 #sec3{
