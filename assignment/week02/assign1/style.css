@@ -126,6 +126,11 @@ section > header{
     aspect-ratio: 1/1;
 }
 
+#sec1 > img:hover , #sec2 > img:hover {
+    transform: translateY(-0.3rem);
+    transition: all 0.2s linear;
+}
+
 #sec3{
     display: grid;
     padding: 3rem 10rem;
