@@ -160,7 +160,7 @@ input[type="checkbox"]:checked + label{
 }
 
 #modalWrap {
-    display: none;
+    /* display: none; */
     position: fixed; 
     z-index: 1; 
     padding-top: 100px; 
@@ -175,9 +175,10 @@ input[type="checkbox"]:checked + label{
     bottom: 0px;
     position: relative;
     margin: auto;
-    width: 500px;
-    height: 300px;
-    padding: 30px 30px;
+    text-align: center;
+    width: 20rem;
+    height: 25rem;
+    padding: 1rem;
     border-radius: 5rem;
     background-color: #fff;
 }
@@ -192,4 +193,22 @@ input[type="checkbox"]:checked + label{
 
 #add-category-out{
     display: none;
+}
+
+#modal-btn button{
+    background-color: antiquewhite;
+    border: none;
+    margin: 2rem 1rem;
+}
+
+#modalBody section{
+    margin-bottom: 1rem;
+}
+
+#modal-category{
+    display: inline-flex;
+}
+
+#modal-category header{
+    margin-right: 1rem;
 }
