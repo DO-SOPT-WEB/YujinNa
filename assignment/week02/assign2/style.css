@@ -1,0 +1,257 @@
+body {
+    box-sizing: border-box;
+    margin:auto;
+    font-weight: 600;
+}
+
+body > header{
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: lightcyan;
+    border-bottom: 3px solid lightgrey;
+    padding: 1rem 0;
+}
+
+#total{
+    background-color: lightcyan;
+    margin: 10px 30px;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#total strong{
+    font-size: 30px;
+}
+
+#plusminus{
+    display: flex;
+    justify-content: center;
+    margin: 10px 15px;
+}
+
+#plusminus .sign{
+    background-color: white;
+    text-align: center;
+    border-radius: 100%;
+    padding: 0 5px;
+    margin:10px;
+}
+
+#plusminus div:nth-child(1){
+    color: blue;
+    margin-right: 20px;
+}
+
+#plusminus div:nth-child(2){
+    color: red;
+}
+
+#detail{
+    margin-top: 1rem;
+    margin-bottom: 5px;
+    border-top: 3px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
+
+#date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#date img{
+    width: 30px;
+    margin:0 5px;
+}
+
+#datebelow{
+    display: flex;
+    justify-content: space-between;
+    margin:0 20px;
+    padding:0 0 15px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]+label{
+    padding:3px 10px;
+    border-radius: 10px;
+    border: 3px solid lightskyblue;
+}
+
+input[type="checkbox"]:checked + label{
+    color: white;    
+    background-color: lightskyblue;
+}
+
+#detaillist{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 40vh;
+}
+
+.eachlist{
+    display: flex;
+    background-color: lightcyan;
+    margin: 5px 30px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.eachlist .in{
+    color: blue;
+}
+
+.eachlist .out{
+    color: red;
+}
+
+.eachlist div:nth-child(1){
+    flex-basis: 15%;
+}
+
+.eachlist div:nth-child(2){
+    flex-basis: 60%;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.eachlist div:nth-child(3){
+    flex-basis: 25%;
+    text-align: right;
+}
+
+
+.xbtn{
+    position: absolute;
+    top:0px;
+    right: 8px;
+    font-weight: 500;
+}
+
+#bottom{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: ivory;
+}
+
+#bottom div{
+    background-color: lightsteelblue;
+    width: fit-content;
+    padding: 0px 30px 10px;
+    border-radius: 30px;
+    justify-content: center;
+    vertical-align: center;
+    margin: auto;
+    color: white;
+    font-size: 50px;
+}
+
+.modalWrap {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0px;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modalBody {
+    bottom: 0px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 20rem;
+    height: 25rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    background-color: #fff;
+}
+
+#closeBtn {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#add-category-out{
+    display: none;
+}
+
+#modal-btn button{
+    background-color: antiquewhite;
+    border: none;
+    margin: 2rem 1rem;
+}
+
+.modalBody section{
+    margin-bottom: 1rem;
+}
+
+#modal-category{
+    display: inline-flex;
+}
+
+#modal-category header{
+    margin-right: 1rem;
+}
+
+.deleteModalWrap {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0px;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.deleteModalBody{
+    top: 5rem;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 20rem;
+    justify-content: center;
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    background-color: #fff;
+}
+
+.deleteModalBody *{
+    margin:1rem 0;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type="radio"]+label{
+    padding:3px 10px;
+    border-radius: 10px;
+    border: 3px solid lightskyblue;
+}
+
+input[type="radio"]:checked + label{
+    color: white;    
+    background-color: lightskyblue;
+}

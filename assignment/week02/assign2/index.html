@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>가계부</title>
+</head>
+<body>
+    <header>유진이의 가계부</header>
+    <section id="total">
+        <header>나의 자산</header>
+        <strong id="totalMoney">249700</strong>
+        <div id="plusminus">
+            <div><span class="sign">+</span><span id="income_tot">300000</span></div>
+            <div><span class="sign">-</span><span id="outcome_tot">300000</span></div>
+        </div>
+    </section>
+
+    <section id="detail">
+        <div id="date">
+            <img src="../../week01/assign4/img/left.png" alt="leftbtn"/>
+            <header>10월 1일</header>
+            <img src="../../week01/assign4/img/right.png" alt="rightbtn"/>
+        </div>
+
+        <div id="datebelow">
+            <div>내역 리스트</div>
+            <div>
+                <input checked type="checkbox" id="in"/>
+                <label for="in">수입</label>
+                <input checked type="checkbox" id="out"/>
+                <label for="out">지출</label>
+            </div>
+        </div>
+        <section class="deleteModalWrap">
+            <div class="deleteModalBody">
+                <div>정말로 삭제하겠습니까?</div>
+                <div id="modal-in-out">
+                    <input type="radio" id="closeYes" name="closeYes"/>
+                    <label for="closeYes">예</label>
+                    <input type="radio" id="closeNo" name="closeNo"/>
+                    <label for="closeNo">취소</label>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section id="detaillist">
+    </section>
+    <section id="bottom">
+        <div>+</div>        
+    </section>
+    <section class="modalWrap">
+            <div class="modalBody">
+                <h1>내역 추가</h1>
+                <section id="modal-in-out">
+                    <input checked type="radio" id="add-in" name="inout"/>
+                    <label for="add-in">수입</label>
+                    <input type="radio" id="add-out" name="inout"/>
+                    <label for="add-out">지출</label>
+                </section>
+                <section id="modal-category">
+                    <header>종류</header>
+                    <div id="add-category-in">
+                        <select id="category-in">
+                            <option value="과외" name="category-in">과외</option>
+                            <option value="용돈" name="category-in">용돈</option>
+                        </select>
+                    </div>
+                    <div id="add-category-out">
+                        <select id="category-out">
+                            <option value="식비" name="category-out">식비</option>
+                            <option value="쇼핑" name="category-out">쇼핑</option>
+                        </select>
+                    </div>
+                    
+                </section>
+                <section id="modal-amount">
+                    <header>금액</header>
+                    <input id="input-amount" />
+                </section>
+                <section id="modal-content">
+                    <header>내용</header>
+                    <input type="text" id="input-content"/>
+                </section>
+                <section id="modal-btn">
+                    <button type="button" class="modal-saveBtn">저장하기</button>
+                    <button type="button" class="modal-closeBtn">닫기</button>
+                </section>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
