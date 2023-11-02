@@ -50,19 +50,21 @@ addBtn.addEventListener("click",addList);
 submitBtn.addEventListener("click",submitList);
 
 c_in.addEventListener("change",function(event){
-    console.log(event.target.value);
     inputCategory=event.target.value;
 })
 c_out.addEventListener("change",function(event){
     inputCategory=event.target.value;
-    console.log(event.target.value);
 })
-m_input.addEventListener("change",function(event){
-    console.log(event.target.value);
-    inputAmount=event.target.value;
+m_input.addEventListener("input",function(event){
+    if(isNaN(event.target.value)){
+        window.alert("숫자 외의 문자는 입력할 수 없습니다.");
+        // 숫자아닌건 없애도록 replace하는 정규식
+        event.target.value=event.target.value.replace(/[^0-9]/g,"");
+    }else{
+        inputAmount=event.target.value;
+    }
 })
 m_content.addEventListener("change",function(event){
-    console.log(event.target.value);
     inputContent=event.target.value;
 })
 
@@ -162,15 +164,20 @@ function addList(){
 }
 
 function submitList(){
-    history_list.push({
-        category:inputCategory,
-        detail:inputContent,
-        amount: inputAmount*inputSign
-    })
-    window.alert("저장되었습니다.");
-    detaillist.replaceChildren();
-    makeHistoryList();
-    calculateHistory();
+    if(inputCategory=="" || inputAmount==""|| inputContent==""){
+        window.alert("아직 입력되지 않은 항목이 있습니다.");
+        console.log('null');
+    }
+    // if(inputCategory)
+    // history_list.push({
+    //     category:inputCategory,
+    //     detail:inputContent,
+    //     amount: inputAmount*inputSign
+    // })
+    // window.alert("저장되었습니다.");
+    // detaillist.replaceChildren();
+    // makeHistoryList();
+    // calculateHistory();
 
 }
 
