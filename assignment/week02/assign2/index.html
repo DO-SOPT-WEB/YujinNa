@@ -33,15 +33,25 @@
                 <label for="out">지출</label>
             </div>
         </div>
+        <section class="deleteModalWrap">
+            <div class="deleteModalBody">
+                <div>정말로 삭제하겠습니까?</div>
+                <div id="modal-in-out">
+                    <input type="radio" id="closeYes" name="closeYes"/>
+                    <label for="closeYes">예</label>
+                    <input type="radio" id="closeNo" name="closeNo"/>
+                    <label for="closeNo">취소</label>
+                </div>
+            </div>
+        </section>
     </section>
     <section id="detaillist">
     </section>
     <section id="bottom">
         <div>+</div>        
     </section>
-    <section id="modalWrap">
-        <div id="modalContent">
-            <div id="modalBody">
+    <section class="modalWrap">
+            <div class="modalBody">
                 <h1>내역 추가</h1>
                 <section id="modal-in-out">
                     <input checked type="radio" id="add-in" name="inout"/>
@@ -77,7 +87,6 @@
                     <button type="button" class="modal-saveBtn">저장하기</button>
                     <button type="button" class="modal-closeBtn">닫기</button>
                 </section>
-            </div>
         </div>
     </section>
     <script src="index.js"></script>

@@ -26,7 +26,7 @@ const outcome=document.querySelector("#outcome_tot");
 const inBtn=document.querySelector("#in");
 const outBtn=document.querySelector("#out");
 const addBtn=document.querySelector("#bottom div");
-const modal = document.getElementById('modalWrap');
+const modal = document.querySelector('.modalWrap');
 var radio = document.getElementsByName("inout");
 const c_in = document.getElementById('category-in');
 const c_out= document.getElementById('category-out');
@@ -35,6 +35,7 @@ const m_content=document.querySelector('#input-content');
 
 const submitBtn=document.querySelector('.modal-saveBtn');
 const closeBtn = document.querySelector('.modal-closeBtn');
+const closeModal = document.querySelector('.deleteModalWrap');
 let inputAmount=0;
 let inputContent="";
 let inputSign=1;
@@ -122,12 +123,25 @@ function makeHistoryList(){
 }
 
 function deleteHistory(event){
-    detaillist.removeChild(event.target.parentNode);
-    console.log(event.target.previousElementSibling.previousElementSibling.innerText);
-    const idx= history_list.findIndex(each => each.detail ===event.target.previousElementSibling.previousElementSibling.innerText)
-    history_list.splice(idx,1);
-    doFilter()
-    calculateHistory();
+    closeModal.style.display="block";
+    let yes = document.querySelector('#closeYes');
+    let no = document.querySelector('#closeNo');
+    
+    yes.addEventListener("click",(e)=>{
+        if(e.target.value){
+            detaillist.removeChild(event.target.parentNode);
+            const idx= history_list.findIndex(each => each.detail ===event.target.previousElementSibling.previousElementSibling.innerText)
+            history_list.splice(idx,1);
+            closeModal.style.display="none";
+            doFilter()
+            calculateHistory();
+        }
+    })
+
+    no.addEventListener("click",(e)=>{
+        e.target.value && (closeModal.style.display="none")
+    })
+    
 }   
 
 function calculateHistory(){
