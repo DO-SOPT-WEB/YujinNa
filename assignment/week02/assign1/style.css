@@ -96,6 +96,7 @@ section > header{
     position:relative;
 
 }
+
 .sec1 img{
     width: 250px;
     height: 250px;
@@ -130,6 +131,11 @@ section > header{
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 500;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 #sec2{
