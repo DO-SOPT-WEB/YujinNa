@@ -167,17 +167,18 @@ function submitList(){
     if(inputCategory=="" || inputAmount==""|| inputContent==""){
         window.alert("아직 입력되지 않은 항목이 있습니다.");
         console.log('null');
+    }else{
+        history_list.push({
+            category:inputCategory,
+            detail:inputContent,
+            amount: inputAmount*inputSign
+        })
+        window.alert("저장되었습니다.");
+        detaillist.replaceChildren();
+        makeHistoryList();
+        calculateHistory();
     }
-    // if(inputCategory)
-    // history_list.push({
-    //     category:inputCategory,
-    //     detail:inputContent,
-    //     amount: inputAmount*inputSign
-    // })
-    // window.alert("저장되었습니다.");
-    // detaillist.replaceChildren();
-    // makeHistoryList();
-    // calculateHistory();
+    
 
 }
 
