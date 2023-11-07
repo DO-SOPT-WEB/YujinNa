@@ -14,6 +14,5 @@ export default Header;
 const Container=styled.div`
   padding: 1rem;
   background-color: pink;
-  font-weight: 600;
 
 `
