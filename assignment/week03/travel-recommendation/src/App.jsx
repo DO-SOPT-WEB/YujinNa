@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import styled from 'styled-components'
-import Description from './components/Description'
 import BeforeStart from './components/BeforeStart';
 import AfterStart from './components/AfterStart';
 function App() {
@@ -13,7 +12,9 @@ function App() {
       <Header/>
       <Container>
         {isStarted?(
-          <AfterStart/>
+          <AfterStart
+            category={category}
+          />
         ):(
           <BeforeStart 
             setIsStarted={setIsStarted}

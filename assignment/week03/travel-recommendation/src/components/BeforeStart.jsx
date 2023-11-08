@@ -1,6 +1,5 @@
 import React from 'react';
-import Description from './Description';
-import { Btn, BtnBox, MainBox, TypeofRecommand } from './Design';
+import { Btn, BtnBox, MainBox, TypeofRecommand,Description } from './Design';
 
 const BeforeStart = ({setIsStarted, category, setCategory}) => {
     const categoryList=['취향대로 추천', '랜덤 추천'];
