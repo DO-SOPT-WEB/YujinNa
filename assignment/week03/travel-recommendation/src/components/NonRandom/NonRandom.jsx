@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
-import { BtnBox, MainBox,Description } from '../Design';
+import { BtnBox, MainBox,Description,AnswerBox } from '../Design';
 import { questionList } from './QuestionList';
 
 const NonRandom = ({id}) => {
-    console.log(questionList[id].question);
-
+    const [clickedList,setClickedList]=useState([false,false,false]);
+    const onAnswerClick=(idx)=>{
+        const newClickedList=clickedList.map((each,i)=>
+            idx===i? true:false
+        )
+        setClickedList(newClickedList);
+    }
     return (
         <>
             <Description>{questionList[id].question}</Description>
             <MainBox>
                 {questionList[id].answer.map((each, idx)=>
-                    <div key={idx}>
+                    <AnswerBox 
+                        key={idx} 
+                        onClick={(e)=>onAnswerClick(idx,e)}
+                        btncolor={clickedList[idx]}
+                        >
                         {each}
-                    </div>    
+                    </AnswerBox>    
                 )}
             </MainBox>     
             <BtnBox>
@@ -24,3 +33,4 @@ const NonRandom = ({id}) => {
 };
 
 export default NonRandom;
+

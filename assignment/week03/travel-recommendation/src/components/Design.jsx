@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 
 export const MainBox=styled.div`
 position: absolute;
@@ -10,6 +10,7 @@ padding: 1rem;
 width: 60vw;
 display: flex;
 justify-content: center;
+align-items: center;
 `;
 
 export const TypeofRecommand=styled.div`
@@ -21,6 +22,21 @@ export const TypeofRecommand=styled.div`
   align-items: center;
   border-radius: 1rem;
 `;
+
+export const AnswerBox = styled(TypeofRecommand)`
+    /* background-color: white; */
+    height:7em;
+    &:hover{
+      border: solid 1px gray;
+    }
+    background-color: ${({btncolor}) => btncolor?'gray':'white'};
+    border: ${({btncolor}) => btncolor&&'solid 1px gray'};
+    &:focus{
+      background-color: gray;
+      border: solid 1px gray;
+    }
+
+`
 
 export const BtnBox=styled.div`
   position: absolute;
