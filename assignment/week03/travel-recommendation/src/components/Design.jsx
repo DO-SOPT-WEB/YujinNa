@@ -41,6 +41,9 @@ export const AnswerBox = styled(TypeofRecommand)`
 
 export const BtnBox=styled.div`
   position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 15em;
   /* background-color: white; */
   top: 30rem;
 `;

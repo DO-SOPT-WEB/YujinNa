@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BtnBox, MainBox,Description,AnswerBox } from '../Design';
+import { BtnBox, MainBox,Description,AnswerBox, Btn } from '../Design';
 import { questionList } from './QuestionList';
 
 const NonRandom = ({id}) => {
@@ -25,7 +25,9 @@ const NonRandom = ({id}) => {
                 )}
             </MainBox>     
             <BtnBox>
-                {/* {category!==-1 &&<Btn onClick={onBtnClick}>Start!</Btn>} */}
+                <Btn>이전으로</Btn>
+                {clickedList.some((element)=> element==true)
+                    ? <Btn>다음으로</Btn> : <Btn disabled>다음으로</Btn>}
             </BtnBox>
     </>
         
