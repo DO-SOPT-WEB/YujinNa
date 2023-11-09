@@ -5,9 +5,9 @@ export const questionList=[{
 },{
     id:2,
     question:'어떤 컨셉의 여행을 좋아해?',
-    answer:['힐링','액티비티','관광']
+    answer:['힐링/휴양','관광/활동']
 },{
     id:3,
     question:'누구랑 함께 가?',
-    answer:['친구 혹은 연인','가족 혹은 혼자']
+    answer:['혼자','친구/연인','가족']
 }];

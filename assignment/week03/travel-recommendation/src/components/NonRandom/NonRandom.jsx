@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BtnBox, MainBox,Description,AnswerBox, Btn } from '../Design';
 import { questionList } from './QuestionList';
 
-const NonRandom = ({id,setId, setIsStarted}) => {
+const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
     const [clickedList,setClickedList]=useState([false,false,false]);
     const [nextBtnContent, setNextBtnContent]=useState('다음으로');
     useEffect(()=>{
@@ -13,6 +13,9 @@ const NonRandom = ({id,setId, setIsStarted}) => {
     const onAnswerClick=(idx)=>{
         const newClickedList=clickedList.map((each,i)=> idx===i ? true : false);
         setClickedList(newClickedList);
+        calculator[id]=idx;
+        setCalculator([...calculator]);
+        // console.log(calculator);
     }
 
     const onNextClick=()=>{
