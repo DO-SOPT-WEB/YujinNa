@@ -13,10 +13,12 @@ function App() {
       <Container>
         {isStarted?(
           <AfterStart
+            setIsStarted={setIsStarted}
             category={category}
           />
         ):(
           <BeforeStart 
+            isStarted={isStarted}
             setIsStarted={setIsStarted}
             category={category}
             setCategory={setCategory}
