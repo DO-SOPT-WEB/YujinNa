@@ -15,6 +15,7 @@ align-items: center;
 
 export const TypeofRecommand=styled.div`
   width: 40em;
+  height: inherit;
   background-color: #ffe0e0;
   margin: 0 1rem;
   display: flex;
