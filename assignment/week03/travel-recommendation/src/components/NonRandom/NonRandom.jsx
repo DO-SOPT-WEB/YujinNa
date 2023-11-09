@@ -4,9 +4,10 @@ import { questionList } from './QuestionList';
 
 const NonRandom = ({id,setId, setIsStarted}) => {
     const [clickedList,setClickedList]=useState([false,false,false]);
-
+    const [nextBtnContent, setNextBtnContent]=useState('다음으로');
     useEffect(()=>{
         setClickedList([false,false,false]);
+        id>=2 ? setNextBtnContent("결과보기") : setNextBtnContent("다음으로")
     },[id]);
 
     const onAnswerClick=(idx)=>{
@@ -20,7 +21,7 @@ const NonRandom = ({id,setId, setIsStarted}) => {
     const onBackClick=()=>{
         id-1>=0
             ? setId(id-1)
-            : setIsStarted(false)        
+            : setIsStarted(false), setId(0)        
     }
     return (
         <>
@@ -39,8 +40,8 @@ const NonRandom = ({id,setId, setIsStarted}) => {
             <BtnBox>
                 <Btn onClick={onBackClick}>이전으로</Btn>
                 {clickedList.some((element)=> element==true)
-                    ? <Btn onClick={onNextClick}>다음으로</Btn> 
-                    : <Btn disabled>다음으로</Btn>}
+                    ? <Btn onClick={onNextClick}>{nextBtnContent}</Btn> 
+                    : <Btn disabled>{nextBtnContent}</Btn>}
             </BtnBox>
     </>
         

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Random from './Random/Random';
 import NonRandom from './NonRandom/NonRandom';
+import Result from './Result';
 
 const AfterStart = ({category, setIsStarted}) => {
     const [id,setId]=useState(0);
@@ -10,7 +11,9 @@ const AfterStart = ({category, setIsStarted}) => {
             {category==='랜덤 추천'?(
                 <Random/>
             ):(
-                <NonRandom id={id} setId={setId} setIsStarted={setIsStarted}/>
+                id < 3
+                ? <NonRandom id={id} setId={setId} setIsStarted={setIsStarted}/>
+                : <Result/>
             )}
         </>
     );
