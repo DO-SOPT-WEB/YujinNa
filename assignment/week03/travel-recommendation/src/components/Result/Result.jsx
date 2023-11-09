@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Btn, BtnBox, Description, MainBox } from '../Design';
+import { Btn, BtnBox, Description, ResultBox } from '../Design';
 import Calculator from './Calculator';
 
 const Result = ({calculator}) => {
@@ -9,9 +9,9 @@ const Result = ({calculator}) => {
     return (
         <>
             <Description>추천하는 여행지는 바로!!</Description>
-            <MainBox>
+            <ResultBox>
                 <Calculator calculator={calculator} />
-            </MainBox>     
+            </ResultBox>     
             <BtnBox>
                 <Btn onClick={onRetryClick}>다시하기</Btn>
             </BtnBox>

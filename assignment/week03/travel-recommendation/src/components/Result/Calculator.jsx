@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ResultContry, ResutlImg } from '../Design';
 
 const Calculator = ({calculator}) => {
     // 결과는 프랑스, 스위스, 미국, 캐나다, 태국, 일본
@@ -6,15 +7,16 @@ const Calculator = ({calculator}) => {
     
     const score=[0,0,0,0,0,0];
     const [result,setResult]=useState('계산중');
-    
+    const [imgUrl,setImgUrl]=useState('');
+
     useEffect(()=>{
         findResult();
     },[calculator]);
 
     const findResult= async ()=>{
         await calculate();
-        
         setResult(ContryList[score.indexOf(Math.max(...score))]);
+        setImgUrl('/images/'+ContryList[score.indexOf(Math.max(...score))]+'.jpg');
     }
 
     const  calculate = async () =>{
@@ -68,7 +70,14 @@ const Calculator = ({calculator}) => {
     }
     
     return (
-        <> {result!=='계산중' && <>{result}</>}</>
+        <> {result!=='계산중' && 
+                <>
+                    <ResutlImg src={imgUrl}/>
+                    <ResultContry>{result}</ResultContry>
+                </>
+                
+            }
+        </>
     );
 };
 

@@ -13,6 +13,17 @@ export const MainBox=styled.div`
   align-items: center;
 `;
 
+export const ResultBox=styled(MainBox)`
+  flex-direction: column;
+`
+export const ResultContry=styled.div`
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1rem;
+  background-color: #df4b8e;
+`
+
 export const TypeofRecommand=styled.div`
   width: 40em;
   height: inherit;
@@ -63,5 +74,9 @@ export const Description=styled.div`
   padding: 0.5rem 1.5rem;
   position: absolute;
   top: 1rem;
+
+`
+export const ResutlImg=styled.img`
+  width:15em;
 
 `
