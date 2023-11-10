@@ -97,16 +97,15 @@ export const ResutlImg=styled.img`
 const rotation=keyframes`
   from{
     transform: rotate(0deg);
-    color: ${({ theme }) => theme.colors.red};
-    background-color: ${({ theme }) => theme.colors.gray};
+    color: red;
+    background-color: skyblue;
   }
 
   to{
     transform: rotate(360deg);
-    color: ${({ theme }) => theme.colors.green};
-    background-color:${({ theme }) => theme.colors.yellow};;
+    color: green;
+    background-color: yellow;
   }
-
 `;
 
 export const CountDown=styled.div`
