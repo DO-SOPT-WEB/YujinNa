@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Btn, BtnBox, MainBox, TypeofRecommand,Description } from './Design';
 
-const BeforeStart = ({isStarted,setIsStarted, category, setCategory}) => {
+const BeforeStart = ({isStarted,setIsStarted, category, setCategory, setIsHome}) => {
     const categoryList=['취향대로 추천', '랜덤 추천'];
     const onTypeClick=(category)=>{
         category==='취향대로 추천'?setCategory('취향대로 추천'):setCategory('랜덤 추천');
+        setIsHome(false);
     }
     const onBtnClick=()=>{
         setIsStarted(true);

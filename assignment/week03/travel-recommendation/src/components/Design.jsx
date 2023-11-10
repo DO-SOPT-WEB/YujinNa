@@ -69,6 +69,11 @@ export const Btn=styled.button`
   }
 `;
 
+export const GotoHomeBtn=styled(Btn)`
+  position: absolute;
+  right: 1rem;
+`
+
 export const Description=styled.div`
   background-color:ivory;
   padding: 0.5rem 1.5rem;
