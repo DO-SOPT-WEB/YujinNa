@@ -21,7 +21,7 @@ const BeforeStart = ({isStarted,setIsStarted, category, setCategory, setIsHome})
                         {type}
                     </TypeofRecommand>)
                 ):(
-                    <TypeofRecommand>
+                    <TypeofRecommand selected={true}>
                         {category}
                     </TypeofRecommand>
                 )}

@@ -37,6 +37,10 @@ export const TypeofRecommand=styled.div`
   width: 50rem;
   height: inherit;
   background-color: ${({ theme }) => theme.colors.lightRed};
+  border: ${({theme}) => `solid 0.3rem ${theme.colors.lightRed}`};
+  &:hover{
+    border: ${({selected}) => !selected && 'solid 0.3rem gray'
+  }}
   margin: 0 1rem;
   display: flex;
   justify-content: center;
