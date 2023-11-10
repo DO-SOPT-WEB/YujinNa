@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BtnBox, MainBox,Description,AnswerBox, Btn } from '../Design';
+import { BtnBox, MainBox,Description,AnswerBox, Btn, LevelBox } from '../Design';
 import { questionList } from './QuestionList';
 
 const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
@@ -29,6 +29,9 @@ const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
     return (
         <>
             <Description>{questionList[id].question}</Description>
+            <LevelBox>
+                {id+1} / 3
+            </LevelBox>
             <MainBox>
                 {questionList[id].answer.map((each, idx)=>
                     <AnswerBox 

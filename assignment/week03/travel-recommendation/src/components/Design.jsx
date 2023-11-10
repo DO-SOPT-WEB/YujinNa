@@ -13,6 +13,14 @@ export const MainBox=styled.div`
   align-items: center;
 `;
 
+export const LevelBox=styled.div`
+  position: absolute;
+  top:5rem;
+  right: 5rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+`
+
 export const ResultBox=styled(MainBox)`
   flex-direction: column;
 `
