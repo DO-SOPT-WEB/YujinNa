@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GotoHomeBtn } from './Design';
+import { temporaryAnswer } from './NonRandom/QuestionList';
 
 const Header = ({isHome, setIsHome, setIsStarted, setCategory}) => {
   const onClickHomeBtn=()=>{
     setIsStarted(false);
     setIsHome(true);
     setCategory(-1);
+
+    temporaryAnswer.map((eachQ,qIdx) => temporaryAnswer[qIdx]=eachQ.map(() => false));
   }
   return (
     <Container>

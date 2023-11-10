@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { BtnBox, MainBox,Description,AnswerBox, Btn, LevelBox } from '../Design';
-import { questionList } from './QuestionList';
+import { questionList, temporaryAnswer } from './QuestionList';
 
-const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
-    const [clickedList,setClickedList]=useState([false,false,false]);
+const NonRandom = ({id, setId, setIsStarted, calculator, setCalculator}) => {
     const [nextBtnContent, setNextBtnContent]=useState('다음으로');
+    const [loaded,isLoaded]=useState(false);
+
     useEffect(()=>{
-        setClickedList([false,false,false]);
-        id>=2 ? setNextBtnContent("결과보기") : setNextBtnContent("다음으로")
+        id>=2 ? setNextBtnContent("결과보기") : setNextBtnContent("다음으로");
+        isLoaded(true);
     },[id]);
 
     const onAnswerClick=(idx)=>{
-        const newClickedList=clickedList.map((each,i)=> idx===i ? true : false);
-        setClickedList(newClickedList);
+        const newTemporary = temporaryAnswer[id].map((each,i)=>idx===i ? true : false);
+        temporaryAnswer[id]=newTemporary;
         calculator[id]=idx;
         setCalculator([...calculator]);
-        // console.log(calculator);
     }
 
     const onNextClick=()=>{
@@ -23,8 +23,8 @@ const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
     }
     const onBackClick=()=>{
         id-1>=0
-            ? setId(id-1)
-            : setIsStarted(false), setId(0)        
+            ? setId(id-1) 
+            : (setIsStarted(false), setId(0))       
     }
     return (
         <>
@@ -33,11 +33,11 @@ const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
                 {id+1} / 3
             </LevelBox>
             <MainBox>
-                {questionList[id].answer.map((each, idx)=>
+                {loaded && questionList[id].answer.map((each, idx)=>
                     <AnswerBox 
                         key={idx} 
                         onClick={(e)=>onAnswerClick(idx,e)}
-                        btncolor={clickedList[idx]}
+                        btncolor={temporaryAnswer[id][idx]}
                         >
                         {each}
                     </AnswerBox>    
@@ -45,7 +45,7 @@ const NonRandom = ({id,setId, setIsStarted, calculator, setCalculator}) => {
             </MainBox>     
             <BtnBox>
                 <Btn onClick={onBackClick}>이전으로</Btn>
-                {clickedList.some((element)=> element==true)
+                {temporaryAnswer[id].some((element)=> element==true)
                     ? <Btn onClick={onNextClick}>{nextBtnContent}</Btn> 
                     : <Btn disabled>{nextBtnContent}</Btn>}
             </BtnBox>

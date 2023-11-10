@@ -12,7 +12,10 @@ const AfterStart = ({category, setIsStarted}) => {
                 <Random setIsStarted={setIsStarted}/>
             ):(
                 id < 3
-                ? <NonRandom id={id} setId={setId} setIsStarted={setIsStarted} calculator={calculator} setCalculator={setCalculator}/>
+                ? <NonRandom 
+                    id={id} setId={setId} 
+                    setIsStarted={setIsStarted} 
+                    calculator={calculator} setCalculator={setCalculator}/>
                 : <Result calculator={calculator}  setIsStarted={setIsStarted}/>
             )}
         </>

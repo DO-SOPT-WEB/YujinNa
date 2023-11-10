@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Btn, BtnBox, Description, ResultBox, ResultContry, ResutlImg } from '../Design';
 import Calculator from './Calculator';
+import { temporaryAnswer } from '../NonRandom/QuestionList';
 
 const Result = ({calculator, randomResult, setIsStarted}) => {
 
     const onRetryClick=()=>{
         setIsStarted(false);
+        temporaryAnswer.map((eachQ,qIdx) => temporaryAnswer[qIdx]=eachQ.map(() => false));
     }
     return (
         <>

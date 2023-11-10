@@ -11,3 +11,9 @@ export const questionList=[{
     question:'누구랑 함께 가?',
     answer:['혼자','친구/연인','가족']
 }];
+
+export const temporaryAnswer = [
+    [false,false,false],
+    [false,false],
+    [false,false,false],
+]
