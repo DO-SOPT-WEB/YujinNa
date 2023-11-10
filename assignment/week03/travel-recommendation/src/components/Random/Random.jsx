@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import Result from '../Result/Result';
+import { ContryList } from '../Result/ContryList';
 
 const Random = () => {
     const [time,setTime]=useState(3);
+    const [randomResult,setRandomResult]=useState(0);
     useEffect(()=>{
         time>0&&setTimeout(()=>setTime(time-1),1000);
     },[time]);
+    useEffect(()=>{
+        setRandomResult(ContryList[Math.floor(Math.random()*ContryList.length)]);
+    },[]);
     return (
-        <div>
+        <>
             {time>0?(
                 time
             ):(
-                <>결과</>
+                <Result isRandom={true} randomResult={randomResult}/>
             )}
-        </div>
+        </>
     );
 };
 

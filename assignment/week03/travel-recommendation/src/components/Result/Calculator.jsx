@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ResultContry, ResutlImg } from '../Design';
+import { ContryList } from './ContryList';
 
 const Calculator = ({calculator}) => {
     // 결과는 프랑스, 스위스, 미국, 캐나다, 태국, 일본
-    const ContryList=['프랑스', '스위스', '미국', '캐나다', '태국', '일본'];
     
     const score=[0,0,0,0,0,0];
     const [result,setResult]=useState('계산중');

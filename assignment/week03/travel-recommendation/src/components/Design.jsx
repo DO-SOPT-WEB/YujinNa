@@ -77,6 +77,6 @@ export const Description=styled.div`
 
 `
 export const ResutlImg=styled.img`
-  width:15em;
+  width:11em;
 
 `
