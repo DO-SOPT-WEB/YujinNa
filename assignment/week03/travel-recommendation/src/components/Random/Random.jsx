@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Result from '../Result/Result';
 import { ContryList } from '../Result/ContryList';
 
-const Random = () => {
+const Random = ({setIsStarted}) => {
     const [time,setTime]=useState(3);
     const [randomResult,setRandomResult]=useState(0);
     useEffect(()=>{
@@ -16,7 +16,7 @@ const Random = () => {
             {time>0?(
                 time
             ):(
-                <Result isRandom={true} randomResult={randomResult}/>
+                <Result isRandom={true} randomResult={randomResult} setIsStarted={setIsStarted}/>
             )}
         </>
     );

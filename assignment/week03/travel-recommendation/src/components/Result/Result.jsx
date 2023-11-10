@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Btn, BtnBox, Description, ResultBox, ResultContry, ResutlImg } from '../Design';
 import Calculator from './Calculator';
 
-const Result = ({calculator, randomResult}) => {
+const Result = ({calculator, randomResult, setIsStarted}) => {
 
     const onRetryClick=()=>{
-
+        setIsStarted(false);
     }
     return (
         <>

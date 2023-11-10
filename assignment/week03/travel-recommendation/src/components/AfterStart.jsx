@@ -9,11 +9,11 @@ const AfterStart = ({category, setIsStarted}) => {
     return (
         <>
             {category==='랜덤 추천'?(
-                <Random/>
+                <Random setIsStarted={setIsStarted}/>
             ):(
                 id < 3
                 ? <NonRandom id={id} setId={setId} setIsStarted={setIsStarted} calculator={calculator} setCalculator={setCalculator}/>
-                : <Result calculator={calculator}/>
+                : <Result calculator={calculator}  setIsStarted={setIsStarted}/>
             )}
         </>
     );

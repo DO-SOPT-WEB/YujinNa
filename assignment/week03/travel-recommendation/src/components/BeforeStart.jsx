@@ -9,9 +9,6 @@ const BeforeStart = ({isStarted,setIsStarted, category, setCategory}) => {
     const onBtnClick=()=>{
         setIsStarted(true);
     }
-    useEffect(()=>{
-        setCategory(-1)
-    },[isStarted]);
 
     return (
         <>
