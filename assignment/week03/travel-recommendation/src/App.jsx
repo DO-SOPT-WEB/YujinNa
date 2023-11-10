@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Header from './components/Header'
-import styled from 'styled-components'
+import styled, {ThemeProvider} from 'styled-components'
+import GlobalStyle from './styles/GlobalStyle';
+import theme from './styles/theme';
 import BeforeStart from './components/BeforeStart';
 import AfterStart from './components/AfterStart';
 function App() {
@@ -9,7 +11,8 @@ function App() {
   const [isHome,setIsHome]=useState(true);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle/>
       <Header isHome={isHome} setIsStarted={setIsStarted} setIsHome={setIsHome} setCategory={setCategory}/>
       <Container>
         {isStarted?(
@@ -27,7 +30,7 @@ function App() {
           />
         )}
       </Container>
-    </>
+    </ThemeProvider>
     
   )
 }
@@ -38,9 +41,9 @@ const Container=styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 35rem;
+  height: 50rem;
   justify-content: center;
   align-items: center;
   background-color: pink;
-  margin: 1.5rem 3rem;
+  margin: 5rem 7rem;
 `

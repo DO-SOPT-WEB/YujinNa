@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BtnBox, MainBox,Description,AnswerBox, Btn, LevelBox } from '../Design';
+import { BtnBox, MainBox,Description,AnswerBox, Btn, LevelBox } from '../../styles/Design';
 import { questionList, temporaryAnswer } from './QuestionList';
 
 const NonRandom = ({id, setId, setIsStarted, calculator, setCalculator}) => {

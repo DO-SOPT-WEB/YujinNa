@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Result from '../Result/Result';
 import { ContryList } from '../Result/ContryList';
-import { CountDown } from '../Design';
+import { CountDown } from '../../styles/Design';
 
 const Random = ({setIsStarted}) => {
     const [time,setTime]=useState(3);

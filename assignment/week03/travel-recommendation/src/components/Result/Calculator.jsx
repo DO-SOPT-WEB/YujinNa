@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ResultContry, ResutlImg } from '../Design';
+import { ResultContry, ResutlImg } from '../../styles/Design';
 import { ContryList } from './ContryList';
 
 const Calculator = ({calculator}) => {

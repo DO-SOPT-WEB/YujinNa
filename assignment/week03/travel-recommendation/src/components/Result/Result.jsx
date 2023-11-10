@@ -1,5 +1,5 @@
 import React from 'react';
-import { Btn, BtnBox, Description, ResultBox, ResultContry, ResutlImg } from '../Design';
+import { Btn, BtnBox, Description, ResultBox, ResultContry, ResutlImg } from '../../styles/Design';
 import Calculator from './Calculator';
 import { temporaryAnswer } from '../NonRandom/QuestionList';
 

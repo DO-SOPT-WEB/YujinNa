@@ -1,9 +1,9 @@
 import styled,{keyframes} from "styled-components";
 
+
 export const MainBox=styled.div`
   position: absolute;
-  top: 2rem;
-  /* background-color: white; */
+  top: 10rem;
   height: 20rem;
   margin: 3rem;
   padding: 1rem;
@@ -11,6 +11,7 @@ export const MainBox=styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 5rem;
 `;
 
 export const LevelBox=styled.div`
@@ -18,24 +19,24 @@ export const LevelBox=styled.div`
   top:5rem;
   right: 5rem;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 `
 
 export const ResultBox=styled(MainBox)`
   flex-direction: column;
 `
 export const ResultContry=styled.div`
-  font-size: 1.2rem;
+  font-size: 3rem;
   margin-top: 1rem;
   padding: 0.3rem 0.7rem;
   border-radius: 1rem;
-  background-color: #df4b8e;
+  background-color: ${({ theme }) => theme.colors.hotPink};
 `
 
 export const TypeofRecommand=styled.div`
-  width: 40em;
+  width: 50rem;
   height: inherit;
-  background-color: #ffe0e0;
+  background-color: ${({ theme }) => theme.colors.lightRed};
   margin: 0 1rem;
   display: flex;
   justify-content: center;
@@ -44,16 +45,15 @@ export const TypeofRecommand=styled.div`
 `;
 
 export const AnswerBox = styled(TypeofRecommand)`
-  /* background-color: white; */
-  height:7em;
+  height:7rem;
   &:hover{
     border: solid 0.1rem gray;
   }
   background-color: ${({btncolor}) => btncolor?'gray':'white'};
-  border: ${({btncolor}) => btncolor?'solid 0.1rem gray':'solid 0.1rem white'};
+  border: ${({btncolor}) => btncolor?'solid 0.3rem gray':'solid 0.3rem white'};
   &:focus{
-    background-color: gray;
-    border: solid 1px gray;
+    background-color:${({ theme }) => theme.colors.gray};
+    border: solid 1rem ${({ theme }) => theme.colors.gray};
   }
 
 `
@@ -62,18 +62,18 @@ export const BtnBox=styled.div`
   position: absolute;
   display: flex;
   justify-content: space-evenly;
-  width: 15em;
-  /* background-color: white; */
-  top: 30rem;
+  width: 20rem;
+  top: 43rem;
 `;
 
 export const Btn=styled.button`
-  background-color: skyblue;
-  border: solid 0.1rem skyblue;
+  background-color:${({ theme }) => theme.colors.skyBlue};
+  border: solid 0.1rem ${({ theme }) => theme.colors.skyBlue};
   border-radius: 1rem;
+  font-size: 2rem;
   padding: 0.3rem 1rem;
   &:enabled&:hover{
-    border: solid 0.1rem gray;
+    border: solid 0.1rem ${({ theme }) => theme.colors.gray};
   }
 `;
 
@@ -86,24 +86,25 @@ export const Description=styled.div`
   background-color:ivory;
   padding: 0.5rem 1.5rem;
   position: absolute;
-  top: 1rem;
+  top: 2rem;
+  font-size: 2rem;
 
 `
 export const ResutlImg=styled.img`
-  width:11em;
-
+  max-width:30rem;
+  max-height: 30rem;
 `
 const rotation=keyframes`
   from{
     transform: rotate(0deg);
-    color: red;
-    background-color: skyblue;
+    color: ${({ theme }) => theme.colors.red};
+    background-color: ${({ theme }) => theme.colors.gray};
   }
 
   to{
     transform: rotate(360deg);
-    color: green;
-    background-color: yellow;
+    color: ${({ theme }) => theme.colors.green};
+    background-color:${({ theme }) => theme.colors.yellow};;
   }
 
 `;
@@ -111,7 +112,7 @@ const rotation=keyframes`
 export const CountDown=styled.div`
   animation:${rotation} 1s linear infinite;
   border-radius:5rem;
-  padding:1rem 1.5rem;
-  font-size:1.5rem;
+  padding:2rem 3.5rem;
+  font-size:5rem;
 `;
 

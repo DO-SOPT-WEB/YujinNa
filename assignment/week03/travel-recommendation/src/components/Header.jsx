@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GotoHomeBtn } from './Design';
+import { GotoHomeBtn } from '../styles/Design';
 import { temporaryAnswer } from './NonRandom/QuestionList';
 
 const Header = ({isHome, setIsHome, setIsStarted, setCategory}) => {
@@ -24,5 +24,6 @@ export default Header;
 const Container=styled.div`
   padding: 1rem;
   background-color: pink;
+  font-size:5rem;
 
 `
