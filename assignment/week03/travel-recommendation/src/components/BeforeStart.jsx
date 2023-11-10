@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Btn, BtnBox, MainBox, TypeofRecommand,Description } from './Design';
 
 const BeforeStart = ({isStarted,setIsStarted, category, setCategory, setIsHome}) => {

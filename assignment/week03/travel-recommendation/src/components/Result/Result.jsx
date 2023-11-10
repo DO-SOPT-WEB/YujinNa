@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Btn, BtnBox, Description, ResultBox, ResultContry, ResutlImg } from '../Design';
 import Calculator from './Calculator';
 import { temporaryAnswer } from '../NonRandom/QuestionList';
