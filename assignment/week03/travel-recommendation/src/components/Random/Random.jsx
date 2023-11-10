@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Result from '../Result/Result';
 import { ContryList } from '../Result/ContryList';
+import { CountDown } from '../Design';
 
 const Random = ({setIsStarted}) => {
     const [time,setTime]=useState(3);
@@ -14,7 +15,7 @@ const Random = ({setIsStarted}) => {
     return (
         <>
             {time>0?(
-                time
+                <CountDown>{time}</CountDown>
             ):(
                 <Result isRandom={true} randomResult={randomResult} setIsStarted={setIsStarted}/>
             )}

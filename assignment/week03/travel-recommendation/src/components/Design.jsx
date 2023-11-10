@@ -1,4 +1,4 @@
-import styled,{css} from "styled-components";
+import styled,{keyframes} from "styled-components";
 
 export const MainBox=styled.div`
   position: absolute;
@@ -80,3 +80,25 @@ export const ResutlImg=styled.img`
   width:11em;
 
 `
+const rotation=keyframes`
+  from{
+    transform: rotate(0deg);
+    color: red;
+    background-color: skyblue;
+  }
+
+  to{
+    transform: rotate(360deg);
+    color: green;
+    background-color: yellow;
+  }
+
+`;
+
+export const CountDown=styled.div`
+  animation:${rotation} 1s linear infinite;
+  border-radius:5rem;
+  padding:1rem 1.5rem;
+  font-size:1.5rem;
+`;
+
