@@ -1,16 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import GlobalStyle from "./styles/GlobalStyle";
 import Router from "./components/Router";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <GlobalStyle />
-      <Router />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
     </>
   );
 }
