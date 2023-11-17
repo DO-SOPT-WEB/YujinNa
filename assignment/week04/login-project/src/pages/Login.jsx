@@ -24,11 +24,7 @@ const Login = () => {
           password: password,
         })
         .then((res) => {
-          navigate(`/mypage/${res.data.id}`, {
-            state: {
-              id: res.data.id,
-            },
-          });
+          navigate(`/mypage/${res.data.id}`);
         });
     } catch (err) {
       console.log(err);
