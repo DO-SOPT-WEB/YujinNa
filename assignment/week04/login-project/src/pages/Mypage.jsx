@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { St } from "../styles/Modal";
+import img from "../assets/5.jpg";
 const Mypage = () => {
   const { userId } = useParams();
+  const navigate = useNavigate();
   const [username, setUserName] = useState("");
   const [nickname, setNickName] = useState("");
   useEffect(() => {
@@ -14,7 +16,6 @@ const Mypage = () => {
       axios
         .get(`${import.meta.env.VITE_BASE_URL}/api/v1/members/${userId}`)
         .then((response) => {
-          console.log(response);
           setUserName(response.data.username);
           setNickName(response.data.nickname);
         });
@@ -22,11 +23,25 @@ const Mypage = () => {
       console.log(err);
     }
   };
+  const onLogoutBtnClick = () => {
+    navigate("/login");
+  };
   return (
-    <div>
-      <div>{username}</div>
-      <div>{nickname}</div>
-    </div>
+    <St.ModalContainer>
+      <St.ModalBox>
+        <St.ModalTitle>MY PAGE</St.ModalTitle>
+        <St.UserInfoContainer>
+          <St.UserProfile src={img} alt="profile" />
+          <St.UserInfoBox>
+            <St.UserInfo>ID : {username}</St.UserInfo>
+            <St.UserInfo>닉네임 : {nickname}</St.UserInfo>
+          </St.UserInfoBox>
+        </St.UserInfoContainer>
+        <St.ButtonContainer>
+          <St.SubmitButton onClick={onLogoutBtnClick}>로그아웃</St.SubmitButton>
+        </St.ButtonContainer>
+      </St.ModalBox>
+    </St.ModalContainer>
   );
 };
 

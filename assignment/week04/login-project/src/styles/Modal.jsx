@@ -68,4 +68,23 @@ export const St = {
     color: ${({ theme }) => theme.colors.black};
     background-color: ${({ theme }) => theme.colors.white};
   `,
+  UserInfoContainer: styled.div`
+    display: flex;
+    margin-bottom: 3rem;
+  `,
+  UserProfile: styled.img`
+    padding: 1rem;
+    border-radius: 7rem;
+    width: 10rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+  `,
+  UserInfoBox: styled.div`
+    margin: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+  `,
+  UserInfo: styled.div`
+    font-size: 3rem;
+  `,
 };
