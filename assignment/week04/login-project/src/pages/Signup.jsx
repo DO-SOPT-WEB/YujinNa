@@ -22,6 +22,7 @@ const Signup = () => {
       setDisabled(true);
     }
   }, [isExist, userInfo]);
+
   const onInfoChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value.toString() });
   };
@@ -43,18 +44,18 @@ const Signup = () => {
     }
   };
   const onRegisterBtnClick = () => {
-    navigate("/login");
+    !disabled && submitRegister();
   };
-  const onLoginBtnClick = () => {
+  const submitRegister = () => {
     try {
       axios
-        .post(`${import.meta.env.VITE_BASE_URL}/api/v1/members/sign-in`, {
+        .post(`${import.meta.env.VITE_BASE_URL}/api/v1/members`, {
           username: userInfo.id,
-          nickname: userInfo.nickname,
           password: userInfo.password,
+          nickname: userInfo.nickname,
         })
-        .then((res) => {
-          navigate(`/mypage/${res.data.id}`);
+        .then(() => {
+          navigate("/login");
         });
     } catch (err) {
       console.log(err);
