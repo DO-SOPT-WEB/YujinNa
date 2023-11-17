@@ -16,7 +16,7 @@ export const St = {
     padding: 3rem;
     position: relative;
     width: 50rem;
-    height: 30rem;
+    height: ${({ bigger }) => (bigger ? "40rem" : "30rem")};
     display: flex;
     flex-direction: column;
     font-size: 5rem;
@@ -37,7 +37,7 @@ export const St = {
     width: 10rem;
   `,
   InputBox: styled.input`
-    width: 30rem;
+    width: ${({ shorter }) => (shorter ? "20rem" : "30rem")};
     padding: 1rem;
   `,
   ButtonContainer: styled.div`
@@ -86,5 +86,21 @@ export const St = {
   `,
   UserInfo: styled.div`
     font-size: 3rem;
+  `,
+  DuplicateCheckBtn: styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme, checked, isExist }) =>
+      checked
+        ? isExist
+          ? theme.colors.red
+          : theme.colors.green
+        : theme.colors.gray};
   `,
 };
