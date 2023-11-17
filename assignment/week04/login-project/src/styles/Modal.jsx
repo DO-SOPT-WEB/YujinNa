@@ -55,7 +55,8 @@ export const St = {
     padding: 1rem;
     border-radius: 1rem;
     color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme, isdisabled }) =>
+      isdisabled ? theme.colors.gray : theme.colors.black};
   `,
   RegisterButton: styled.div`
     display: flex;
@@ -96,8 +97,8 @@ export const St = {
     font-size: 1.5rem;
     border-radius: 1rem;
     color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme, checked, isExist }) =>
-      checked
+    background-color: ${({ theme, isExist }) =>
+      isExist !== ""
         ? isExist
           ? theme.colors.red
           : theme.colors.green
