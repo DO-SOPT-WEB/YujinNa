@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { St } from "../styles/Modal";
+import { St } from "../styles/Design";
 import img from "../assets/5.jpg";
 const Mypage = () => {
   const { userId } = useParams();
@@ -38,7 +38,9 @@ const Mypage = () => {
           </St.UserInfoBox>
         </St.UserInfoContainer>
         <St.ButtonContainer>
-          <St.SubmitButton onClick={onLogoutBtnClick}>로그아웃</St.SubmitButton>
+          <St.SubmitButton type="button" onClick={onLogoutBtnClick}>
+            로그아웃
+          </St.SubmitButton>
         </St.ButtonContainer>
       </St.ModalBox>
     </St.ModalContainer>

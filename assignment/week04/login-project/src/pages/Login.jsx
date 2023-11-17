@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { St } from "../styles/Modal";
+import { St } from "../styles/Design";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -51,9 +51,11 @@ const Login = () => {
           ></St.InputBox>
         </St.InputContainer>
         <St.ButtonContainer>
-          <St.SubmitButton onClick={onLoginBtnClick}>로그인</St.SubmitButton>
+          <St.SubmitButton type="button" onClick={onLoginBtnClick}>
+            로그인
+          </St.SubmitButton>
           <Link to={"/signup"}>
-            <St.RegisterButton>회원가입</St.RegisterButton>
+            <St.RegisterButton type="button">회원가입</St.RegisterButton>
           </Link>
           {/* <St.RegisterButton onClick={onRegisterBtnClick}>
             회원가입

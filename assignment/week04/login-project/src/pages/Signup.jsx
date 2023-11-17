@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { St } from "../styles/Modal";
+import { St } from "../styles/Design";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -74,7 +74,11 @@ const Signup = () => {
             onChange={onInfoChange}
             shorter={true}
           ></St.InputBox>
-          <St.DuplicateCheckBtn onClick={onDuplicatedClick} isExist={isExist}>
+          <St.DuplicateCheckBtn
+            type="button"
+            onClick={onDuplicatedClick}
+            isExist={isExist}
+          >
             중복체크
           </St.DuplicateCheckBtn>
         </St.InputContainer>
@@ -109,11 +113,11 @@ const Signup = () => {
         </St.InputContainer>
         <St.ButtonContainer>
           {disabled ? (
-            <St.SubmitButton disabled isdisabled={disabled}>
+            <St.SubmitButton type="button" disabled isdisabled={disabled}>
               회원가입
             </St.SubmitButton>
           ) : (
-            <St.SubmitButton onClick={onRegisterBtnClick}>
+            <St.SubmitButton type="button" onClick={onRegisterBtnClick}>
               회원가입
             </St.SubmitButton>
           )}
